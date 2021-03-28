@@ -5,5 +5,4 @@ This effect is usually used in tracking applications
 The .py file shows two video window: 'frame' window shows color video-streaming, 'result' window shows gray video-streaming with a color you click on 'frame' window
 
 
-![Result](https://j.gifs.com/p8OALr.gif)
-[![Watch the video]](https://youtu.be/tIJqNCWD39o)
+[![Watch the video](https://j.gifs.com/p8OALr.gif)](https://youtu.be/tIJqNCWD39o)
