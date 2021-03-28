@@ -15,15 +15,21 @@ def click(event,x,y,flags,param):
     global lower, upper #should be global for streaming
     if event == cv2.EVENT_LBUTTONDOWN:
         hsvFrame = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV) 
-        hsv_color = hsvFrame[x,y] #HSV color of coordinate (x,y)
+        hsv_color = hsvFrame[y,x] #HSV color of coordinate (x,y)
 
         #Uncomment if you want to see the color and coordinate of click event
-        #print('X:',x,' ','Y:',y)
-        #print('hsvcolor:', hsv_color)
+        print('X:',x,' ','Y:',y)
+        print('hsvcolor:', hsv_color)
 
         #storing boundaries of mask
-        lower = np.array([hsv_color[0]-20, hsv_color[1]-20, hsv_color[2]-20], dtype = np.uint8)
-        upper = np.array([hsv_color[0]+20, hsv_color[1]+20, hsv_color[2]+20], dtype = np.uint8)
+        # For color we need HUE (hsv_color[0]), we do not need to use saturation and value as it worsens the result
+        #As we use unsigned int, the difference is very important and could be represented inappropriately (255+1 != 256)
+        tolerance = 10
+        lower = np.array([max(0, hsv_color[0] - tolerance), 10, 10],dtype = np.uint8)
+        upper = np.array([min(179, hsv_color[0] + tolerance), 250, 250],dtype = np.uint8)
+
+        print('lower:', lower)
+        print('upper:', upper)
 
 webcam = cv2.VideoCapture(0,cv2.CAP_DSHOW)
 cv2.namedWindow("frame")
@@ -57,7 +63,7 @@ while(1):
 
     #define my mask when you click
     my_mask = cv2.inRange(hsvFrame, lower, upper)
-    my_mask = cv2.dilate(my_mask, kernal)
+    #my_mask = cv2.dilate(my_mask, kernal)
 
     #you can change my_mask on blue_mask/red_mask/green mask
     processed_frame = cv2.bitwise_and(frame, frame, mask = my_mask) #frame with your mask
