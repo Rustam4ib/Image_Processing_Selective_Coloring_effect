@@ -8,4 +8,6 @@ The main concept is to track the HUE parameter of the pixel of a frame and apply
 
 Below you can see the result: 
 [![Watch the video](https://github.com/RustamChib/Image_Processing_Selective_Coloring_effect/blob/main/result.gif)](https://youtu.be/tIJqNCWD39o)
+
+
 For more qualitative representation click on the GIF, it will redirect to the youtube. 
