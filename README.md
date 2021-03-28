@@ -4,5 +4,5 @@ This effect is usually used in tracking applications
 
 The .py file shows two video window: 'frame' window shows color video-streaming, 'result' window shows gray video-streaming with a color you click on 'frame' window
 
-![Output sample](https://github.com/RustamChib/Image_Processing_Selective_Coloring_effect/blob/main/gif%20(1).gif)
+![Output sample](https://github.com/RustamChib/Image_Processing_Selective_Coloring_effect/blob/main/ezgif-3-b5cabbb750b5.gif)
 [![Watch the video]](https://youtu.be/tIJqNCWD39o)
