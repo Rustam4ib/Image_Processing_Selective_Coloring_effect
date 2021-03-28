@@ -6,4 +6,4 @@ The .py file shows two video window: 'frame' window shows color video-streaming,
 
 
 ![Result](https://j.gifs.com/p8OALr.gif)
-[![Watch the video](https://youtu.be/tIJqNCWD39o)
+[![Watch the video]](https://youtu.be/tIJqNCWD39o)
